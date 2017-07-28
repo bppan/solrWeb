@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+    <package name="Action" extends="struts-default">
+        <action name="cache" class="cn.solr.action.CatchPageAction">
+        </action>
+        
+    </package>
+    
+    
+   <package name="ajax_result" namespace="/" extends="json-default">
+        <action name="my_suggest" class="cn.solr.action.SuggestAction">
+        	<result type ="json">
+        	 <param name="root">best_suggest</param>  
+        	</result>
+        </action>
+        <action name="my_query" class="cn.solr.action.QueryAction">
+        	<result type ="json">
+        	</result>
+        </action>
+   </package>
+   
+</struts>    
